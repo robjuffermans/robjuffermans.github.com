@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ortuga - Medical Innovation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.11.4/dist/gsap.min.js"></script>
+    <style>
+      body {
+        margin: 0;
+        overflow: hidden;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      #three-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+      }
+
+      .pulse {
+        animation: pulse 2s infinite;
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+
+        50% {
+          transform: scale(1.05);
+        }
+
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      .glow-text {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+      }
+
+      .card-hover:hover {
+        transform: translateY(-10px);
+        box-shadow:
+          0 20px 25px -5px rgba(0, 0, 0, 0.1),
+          0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      }
+    </style>
+  </head>
+
+  <body
+    class="bg-gradient-to-br from-blue-900 to-indigo-900 text-white h-screen w-screen flex items-center justify-center"
+  >
+    <div id="three-container"></div>
+
+    <div class="container mx-auto px-6 py-12 z-10 max-w-6xl">
+      <div class="flex flex-col items-center text-center">
+        <div class="mb-8">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-24 w-24 mx-auto text-blue-300 pulse"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+            />
+          </svg>
+          <h1 class="text-5xl md:text-6xl font-bold mb-4 glow-text">Ortuga</h1>
+          <p class="text-xl md:text-2xl text-blue-200 font-light">
+            Precision Medical Solutions
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+          <div
+            class="bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-xl p-6 transition-all duration-300 ease-in-out card-hover"
+          >
+            <div class="text-blue-300 mb-4">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-12 w-12 mx-auto"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"
+                />
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Advanced Diagnostics</h3>
+            <p class="text-blue-100">
+              Cutting-edge AI-powered diagnostic tools for accurate and rapid
+              assessments.
+            </p>
+          </div>
+
+          <div
+            class="bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-xl p-6 transition-all duration-300 ease-in-out card-hover"
+          >
+            <div class="text-blue-300 mb-4">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-12 w-12 mx-auto"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+                />
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Patient Management</h3>
+            <p class="text-blue-100">
+              Comprehensive solutions for seamless patient care and record
+              management.
+            </p>
+          </div>
+
+          <div
+            class="bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-xl p-6 transition-all duration-300 ease-in-out card-hover"
+          >
+            <div class="text-blue-300 mb-4">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-12 w-12 mx-auto"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"
+                />
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Mobile Integration</h3>
+            <p class="text-blue-100">
+              Secure mobile access to patient data and real-time monitoring.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Three.js scene setup
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(
+        75,
+        window.innerWidth / window.innerHeight,
+        0.1,
+        1000,
+      );
+      const renderer = new THREE.WebGLRenderer({
+        alpha: true,
+        antialias: true,
+      });
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      document
+        .getElementById("three-container")
+        .appendChild(renderer.domElement);
+
+      // Add lights
+      const ambientLight = new THREE.AmbientLight(0x404040);
+      scene.add(ambientLight);
+
+      const directionalLight = new THREE.DirectionalLight(0xffffff, 0.5);
+      directionalLight.position.set(1, 1, 1);
+      scene.add(directionalLight);
+
+      // Create floating DNA-like helix
+      const helixGroup = new THREE.Group();
+      scene.add(helixGroup);
+
+      const helixGeometry = new THREE.TorusGeometry(0.5, 0.1, 16, 100);
+      const helixMaterial = new THREE.MeshPhongMaterial({
+        color: 0x4fd1ff,
+        transparent: true,
+        opacity: 0.7,
+        shininess: 100,
+      });
+
+      const helixCount = 20;
+      for (let i = 0; i < helixCount; i++) {
+        const helix = new THREE.Mesh(helixGeometry, helixMaterial);
+        const angle = (i / helixCount) * Math.PI * 2;
+        const radius = 3;
+        helix.position.x = Math.cos(angle) * radius;
+        helix.position.z = Math.sin(angle) * radius;
+        helix.position.y = (i - helixCount / 2) * 0.3;
+        helix.rotation.x = Math.PI / 2;
+        helix.rotation.z = angle;
+        helix.scale.set(1, 1, 1 + Math.sin(angle) * 0.5);
+        helixGroup.add(helix);
+      }
+
+      // Add floating particles
+      const particlesGeometry = new THREE.BufferGeometry();
+      const particlesCount = 1000;
+      const posArray = new Float32Array(particlesCount * 3);
+
+      for (let i = 0; i < particlesCount * 3; i++) {
+        posArray[i] = (Math.random() - 0.5) * 20;
+      }
+
+      particlesGeometry.setAttribute(
+        "position",
+        new THREE.BufferAttribute(posArray, 3),
+      );
+
+      const particlesMaterial = new THREE.PointsMaterial({
+        size: 0.05,
+        color: 0x88ccff,
+        transparent: true,
+        opacity: 0.8,
+      });
+
+      const particlesMesh = new THREE.Points(
+        particlesGeometry,
+        particlesMaterial,
+      );
+      scene.add(particlesMesh);
+
+      // Camera position
+      camera.position.z = 10;
+      camera.position.y = 2;
+
+      // Animation loop
+      function animate() {
+        requestAnimationFrame(animate);
+
+        helixGroup.rotation.y += 0.002;
+        helixGroup.rotation.x += 0.001;
+
+        particlesMesh.rotation.y += 0.0005;
+        particlesMesh.rotation.x += 0.0003;
+
+        renderer.render(scene, camera);
+      }
+      animate();
+
+      // Handle window resize
+      window.addEventListener("resize", () => {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+      });
+
+      // GSAP animations for interactive elements
+      document
+        .getElementById("ctaButton")
+        .addEventListener("mouseenter", () => {
+          gsap.to("#ctaButton", {
+            duration: 0.3,
+            boxShadow: "0 0 20px rgba(79, 209, 255, 0.7)",
+            ease: "power2.out",
+          });
+        });
+
+      document
+        .getElementById("ctaButton")
+        .addEventListener("mouseleave", () => {
+          gsap.to("#ctaButton", {
+            duration: 0.3,
+            boxShadow: "none",
+            ease: "power2.out",
+          });
+        });
+
+      // Initial animations
+      gsap.from("h1", {
+        duration: 1,
+        y: -50,
+        opacity: 0,
+        ease: "back.out(1.7)",
+      });
+
+      gsap.from(".pulse", {
+        duration: 1.5,
+        scale: 0,
+        opacity: 0,
+        ease: "elastic.out(1, 0.5)",
+      });
+
+      gsap.from(".card-hover", {
+        duration: 1,
+        y: 50,
+        opacity: 0,
+        stagger: 0.1,
+        ease: "power2.out",
+        delay: 0.5,
+      });
+    </script>
+  </body>
+</html>
